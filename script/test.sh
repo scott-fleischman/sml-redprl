@@ -3,7 +3,11 @@
 REDPRL=./bin/redprl
 PROBLEM=0
 
-echo "Building RedPRL..."
+echo "Building RedPRL with SML/NJ..."
+./script/smlnj.sh >build.log 2>&1 || { echo "build failed!"; cat build.log; exit 1; }
+echo "done!"
+
+echo "Building RedPRL with MLton..."
 ./script/mlton.sh >build.log 2>&1 || { echo "build failed!"; cat build.log; exit 1; }
 echo "done!"
 
