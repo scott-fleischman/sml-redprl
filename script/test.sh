@@ -4,11 +4,11 @@ REDPRL=./bin/redprl
 PROBLEM=0
 
 echo "Building RedPRL with SML/NJ..."
-./script/smlnj.sh >build.log 2>&1 || { echo "build failed!"; cat build.log; exit 1; }
+./script/smlnj.sh >"build-smlnj.log" 2>&1 || { echo "build failed!"; cat "build-smlnj.log"; exit 1; }
 echo "done!"
 
 echo "Building RedPRL with MLton..."
-./script/mlton.sh >build.log 2>&1 || { echo "build failed!"; cat build.log; exit 1; }
+./script/mlton.sh >"build-mlton.log" 2>&1 || { echo "build failed!"; cat "build-mlton.log"; exit 1; }
 echo "done!"
 
 # Ensure that the examples file and all suceeding tests succeed
