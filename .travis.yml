@@ -1,7 +1,7 @@
 language: sml
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y --force-yes smlnj mlton
+  - sudo apt-get install -y --force-yes smlnj mlton ml-yacc ml-ulex
 install:
   - git submodule init
   - git submodule update --init --recursive
